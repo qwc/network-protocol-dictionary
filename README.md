@@ -17,11 +17,21 @@ This is a YAML network protocol dictionary for all (binary based) OSI-Layer 1-4 
 How to add a new protocol
 ----
 
-Clone. Check structure-schema.yml. Install kwalify (has ruby as dependency!). Write protocol file in ./protocols/osi[layer]/[protocolname].yml. Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml' or validate all at once with 'kwalify -lf structure-schema.yml ./protocols/osi*/*.yml'. Be happy.
+- Clone. 
+- Install ruby+[kwalify](http://www.kuwata-lab.com/kwalify/).
+- Check structure-schema.yml.  
+- Write protocol file in ./protocols/osi[layer]/[protocolname].yml. 
+- Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml' or validate all at once with 'kwalify -lf structure-schema.yml ./protocols/osi*/*.yml'. 
+- Be happy.
 
 How to use this dictionary
 ----
 
-Clone. Get a YAML library for your program language. Load desired protocol files, or all of them. Use resulting data structures to build protocol packet structures.
+Currently not recommended, because the project lacks deeper tests than just schema validation. ;)
+
+- Clone. 
+- Get a YAML library for your program language. 
+- Load desired protocol files, or all of them. 
+- Use resulting data structures to build protocol packet structures.
 
 This repository will provide examples or useable code snippets for specific programming languages in the future...
