@@ -36,6 +36,35 @@ mapping:
                 type: seq
                 sequence: *fieldsseq
       "osilayer": 
-        type: int
+        type: int 
         range: { max: 7, min: 1 }
         required: yes
+      "nextlayer":
+        type: seq
+        sequence:
+          - type: map
+            mapping:
+              "protocol": 
+                type: str
+                required: yes
+              "identifier":
+                type: int
+                required: yes
+      "extensions": 
+        type: seq
+        sequence: 
+          - type: map
+            mapping: 
+              "extension": 
+                type: map
+                mapping: 
+                  "name":
+                    type: str
+                    required: yes
+                  "referencedfrom": #referencing field of protocol definition
+                    type: str
+                    required: yes
+                  "fields":
+                    type: seq
+                    sequence: *fieldsseq
+            
