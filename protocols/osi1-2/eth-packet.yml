@@ -10,6 +10,5 @@ protocol: &ethpacket
       field: Start of frame delimiter
       length: 1
     - field: eth-frame
-      length: 0
       data: true
       reference: eth-frame
