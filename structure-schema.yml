@@ -95,6 +95,10 @@ mapping:
                   "desc":   # description 
                     type: str
                     required: yes
+                    
+... #kwalify needs this, or it goes crazy validating, but only when there are comments beneath
+
+
 # constraints
 
 # even possible?
