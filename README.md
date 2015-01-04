@@ -3,7 +3,16 @@ Network Protocol Dictionary
 
 This is a YAML network protocol dictionary for all (binary based) OSI-Layer 1-4 protocols, eg. Ethernet, IP, TCP, UDP, etc.
 
-The list may not be complete, if you're missing a protocol, just add it! 
+- What this dictionary should be:
+  - A complete **machine readable** *structure definition* for all binary based network protocols
+  - Addon: some protocol documentation from wikipedia or RFCs for display use.
+  - A reference for building a network packet from scratch in an application, mostly for applications dealing with network packets.
+
+- What it is clearly **NOT**:
+  - Currently: complete.
+  - A replacement for reading RFCs
+  - A source for implementing network stacks
+
 
 How to add a new protocol
 ----
