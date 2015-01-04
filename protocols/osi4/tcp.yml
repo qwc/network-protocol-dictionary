@@ -59,6 +59,5 @@ protocol: &tcp
       repeatable: true
     -
       field: data
-      length: 0
       data: true
   osilayer: 4

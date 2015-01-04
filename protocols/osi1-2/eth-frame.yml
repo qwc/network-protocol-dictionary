@@ -38,7 +38,6 @@ protocol: &ethframe
       length: 2
     -
       field: data
-      length: 0
       data: true
     -
       field: FCS (32-bit CRC)
