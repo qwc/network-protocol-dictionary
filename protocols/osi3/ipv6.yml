@@ -20,6 +20,7 @@ protocol:
     - field: nextheader
       desc: next header identifier (see ipv4 protocol id)
       length: 1
+      nextlayer: yes
     - field: hoplimit
       desc: hop limit
       length: 1
@@ -29,3 +30,73 @@ protocol:
     - field: dstaddress
       desc: destination address
       length: 16
+  nextlayer:
+    - { protocol: hopbyhop, identifier: 0, extension: yes }
+    - { protocol: destoptions, identifier: 60, extension: yes }
+    - { protocol: routing, identifier: 43, extension: yes }
+    - { protocol: fragment, identifier: 44, extension: yes }
+    - { protocol: ipsec_ah, identifier: 51 }
+    - { protocol: ipsec_esp, identifier: 50 }
+    - { protocol: mobility, identifier: 135, extension: yes }
+    - { protocol: tcp, identifier: 6 }
+    - { protocol: udp, identifier: 17 }
+  extensionreferencefield: nextheader
+  extensions:
+    - extension:
+        name: hopbyhop 
+        referenceid: 0
+        fields: &hopbyhop
+          - field: nextheader
+            length: 1
+            nextlayer: yes
+          - field: extlength
+            desc: Header extension lengthin octets
+            length: 1
+          - field: options
+            length: 6
+          - field: options
+            length: 8
+            optional: yes
+            repeatable: yes
+    - extension: 
+        name: destoptions
+        referenceid: 60
+        fields: *hopbyhop
+    - extension:
+        name: routing #is deprecated (see http://en.wikipedia.org/wiki/IPv6_packet)
+        referenceid: 43
+        fields:
+          - field: nextheader
+            length: 1
+            nextlayer: yes
+          - field: extlength
+            length: 1
+          - field: routingtype
+            length: 1
+          - field: segmentsleft
+            length: 1
+          - field: typedata
+            length: 4
+          - field: typedata
+            length: 8
+            optional: yes
+    - extension:
+        name: fragment
+        referenceid: 44
+        fields:
+          - field: nextheader
+            length: 1
+            nextlayer: yes
+          - field: reserved
+            length: 1
+          - field: fragmentoffset
+            bitfield: yes
+            length: 13
+          - field: reserved
+            bitfield: yes
+            length: 2
+          - field: mflag
+            bitfield: yes
+            length: 1
+          - field: identification
+            length: 4

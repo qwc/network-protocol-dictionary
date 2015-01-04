@@ -54,6 +54,8 @@ mapping:
                 required: yes
               "extension": 
                 type: bool
+      "extensionreferencefield":
+        type: str
       "extensions": 
         type: seq
         sequence: 
@@ -67,7 +69,6 @@ mapping:
                     required: yes
                   "referencedfrom": #referencing field of protocol definition
                     type: str
-                    required: yes
                   "referenceid": #reference id used in protocol definition or extension itself
                     type: int
                     required: yes

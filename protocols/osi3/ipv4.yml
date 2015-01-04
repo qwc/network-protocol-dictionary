@@ -67,3 +67,8 @@ protocol:
       optional: yes
     - field: data
       data: true
+  nextlayer:
+    - { protocol: tcp, identifier: 6 }
+    - { protocol: udp, identifier: 17 }
+    
+    
