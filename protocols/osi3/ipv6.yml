@@ -1,0 +1,31 @@
+---
+protocol:
+  name: ipv6
+  osilayer: 3
+  fields:
+    - field: version
+      bitfield: yes
+      length: 4
+    - field: trafficclass
+      desc: traffic class
+      bitfield: yes
+      length: 8
+    - field: flowlabel
+      desc: flow label
+      bitfield: yes
+      length: 20
+    - field: length
+      desc: payload length
+      length: 2
+    - field: nextheader
+      desc: next header identifier (see ipv4 protocol id)
+      length: 1
+    - field: hoplimit
+      desc: hop limit
+      length: 1
+    - field: srcaddress
+      desc: source address
+      length: 16
+    - field: dstaddress
+      desc: destination address
+      length: 16

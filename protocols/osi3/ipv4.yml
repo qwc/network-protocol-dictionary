@@ -32,7 +32,6 @@ protocol:
       length: 3
       subfields:
         - field: reserved
-          desc: reserved
           bitfield: yes
           length: 1
         - field: df
