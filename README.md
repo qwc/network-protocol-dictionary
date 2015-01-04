@@ -8,7 +8,7 @@ The list may not be complete, if you're missing a protocol, just add it!
 How to add a new protocol
 ----
 
-Clone. Check structure-schema.yml. Install kwalify (has ruby as dependency!). Write protocol file in ./protocols/osi[layer]/[protocolname].yml. Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml. Be happy.
+Clone. Check structure-schema.yml. Install kwalify (has ruby as dependency!). Write protocol file in ./protocols/osi[layer]/[protocolname].yml. Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml' or validate all at once with 'kwalify -lf structure-schema.yml ./protocols/osi*/*.yml'. Be happy.
 
 How to use this dictionary
 ----
