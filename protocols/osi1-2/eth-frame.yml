@@ -1,7 +1,7 @@
 #Ethernet
 ---
-protocol: &eth
-  name: eth
+protocol: &ethframe
+  name: eth-frame
   osilayer: 2
   fields:
     - 

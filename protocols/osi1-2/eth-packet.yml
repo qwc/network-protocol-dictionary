@@ -1,0 +1,15 @@
+---
+protocol: &ethpacket
+  name: eth-packet
+  osilayer: 1
+  fields:
+    -
+      field: preamble
+      length: 7
+    -
+      field: Start of frame delimiter
+      length: 1
+    - field: eth-frame
+      length: 0
+      data: true
+      reference: eth-frame

@@ -7,26 +7,31 @@ mapping:
       "name": 
         type: str
         required: yes
+      "shortname": 
+        type: str
       "fields": 
         type: seq
         required: yes
         sequence: &fieldsseq
           - type: map
             mapping: 
-              "field": 
+              "field": #field name (best if only one word, for easier referencing)
                 type: str
                 required: yes
+              "desc": #short description
+                type: str
               "length": #length in bytes, except bitfield is set to true!
                 type: int
-                required: yes
               "bitfield": #if this is true length is in BITS!
                 type: bool
               "optional":
                 type: bool
               "repeatable":
                 type: bool
-              "data": #data placeholder for next layer (length should be 0!)
+              "data": #data placeholder for next layer
                 type: bool
+              "reference": #reference another protocol directly (e.g. ethpacket->ethframe) 
+                type: str
               "subfields": 
                 type: seq
                 sequence: *fieldsseq

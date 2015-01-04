@@ -1,0 +1,70 @@
+---
+protocol:
+  name: internet protocol version 4
+  shortname: ipv4
+  osilayer: 3
+  fields:
+    - field: version
+      desc: Version
+      bitfield: yes
+      length: 4
+    - field: IHL
+      desc: internet header length (IHL)
+      bitfield: yes
+      length: 4
+    - field: DSCP
+      desc: differential services code point (DSCP)
+      bitfield: yes
+      length: 6
+    - field: ECN
+      desc: explicit congestion notification (ECN)
+      bitfield: yes
+      length: 2
+    - field: packetlength
+      desc: total length (incl. header)
+      length: 2
+    - field: id
+      desc: identification
+      length: 2
+    - field: flags
+      desc: fragment flags
+      bitfield: yes
+      length: 3
+      subfields:
+        - field: reserved
+          desc: reserved
+          bitfield: yes
+          length: 1
+        - field: df
+          desc: don't fragment (DF)
+          bitfield: yes
+          length: 1
+        - field: mf
+          desc: more fragments (MF)
+          bitfield: yes
+          length: 1
+    - field: fragmentoffset
+      desc: fragment offset
+      bitfield: yes
+      length: 13
+    - field: TTL
+      desc: time to live (TTL)
+      length: 1
+    - field: protocol
+      desc: protocol id
+      length: 1
+    - field: headerchecksum
+      desc: header checksum
+      length: 2
+    - field: source
+      desc: source ip address
+      length: 4
+    - field: destination
+      desc: destination ip address
+      length: 4
+    - field: options
+      desc: options (if IHL > 5)
+      length: 4
+      optional: yes
+    - field: data
+      data: true
