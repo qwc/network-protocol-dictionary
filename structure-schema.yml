@@ -1,0 +1,36 @@
+type: map
+mapping: 
+  "protocol": 
+    type:     map
+    required: yes
+    mapping: 
+      "name": 
+        type: str
+        required: yes
+      "fields": 
+        type: seq
+        required: yes
+        sequence: &fieldsseq
+          - type: map
+            mapping: 
+              "field": 
+                type: str
+                required: yes
+              "length": #length in bytes, except bitfield is set to true!
+                type: int
+                required: yes
+              "bitfield": #if this is true length is in BITS!
+                type: bool
+              "optional":
+                type: bool
+              "repeatable":
+                type: bool
+              "data": #data placeholder for next layer (length should be 0!)
+                type: bool
+              "subfields": 
+                type: seq
+                sequence: *fieldsseq
+      "osilayer": 
+        type: int
+        range: { max: 7, min: 1 }
+        required: yes
