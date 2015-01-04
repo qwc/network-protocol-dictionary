@@ -7,7 +7,7 @@ mapping:
       "name": 
         type: str
         required: yes
-      "shortname": 
+      "longname": 
         type: str
       "fields": 
         type: seq
@@ -41,19 +41,6 @@ mapping:
         type: int 
         range: { max: 7, min: 1 }
         required: yes
-      "nextlayer": #identifier list for next layer protocols
-        type: seq
-        sequence:
-          - type: map
-            mapping:
-              "protocol": 
-                type: str
-                required: yes
-              "identifier":
-                type: int
-                required: yes
-              "extension": 
-                type: bool
       "extensionreferencefield":
         type: str
       "extensions": 
@@ -95,7 +82,6 @@ mapping:
                   "desc":   # description 
                     type: str
                     required: yes
-                    
 ... #kwalify needs this, or it goes crazy validating, but only when there are comments beneath
 
 

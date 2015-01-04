@@ -1,0 +1,37 @@
+type: map
+mapping: 
+  "layertransition": #layer transition ids
+    type: map
+    required: yes
+    mapping:
+      "layers": # which layers?
+        type: map
+        required: yes
+        mapping: 
+          "from":
+            type: int
+            required: yes
+          "to":
+            type: int
+            required: yes
+      "protocols": # which protocols support these ids?
+        required: yes
+        type: seq
+        sequence:
+          - type: str
+            required: yes
+      "nextlayer": # list of ids with protocol name (reference name!)
+        type: seq
+        required: yes
+        sequence:
+          - type: map
+            mapping:
+              "idhex": 
+                type: str
+                required: yes
+              "protocol": 
+                type: str
+                required: yes
+              "id":
+                type: int
+

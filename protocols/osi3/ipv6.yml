@@ -30,16 +30,6 @@ protocol:
     - field: dstaddress
       desc: destination address
       length: 16
-  nextlayer:
-    - { protocol: hopbyhop, identifier: 0, extension: yes }
-    - { protocol: destoptions, identifier: 60, extension: yes }
-    - { protocol: routing, identifier: 43, extension: yes }
-    - { protocol: fragment, identifier: 44, extension: yes }
-    - { protocol: ipsec_ah, identifier: 51 }
-    - { protocol: ipsec_esp, identifier: 50 }
-    - { protocol: mobility, identifier: 135, extension: yes }
-    - { protocol: tcp, identifier: 6 }
-    - { protocol: udp, identifier: 17 }
   extensionreferencefield: nextheader
   extensions:
     - extension:

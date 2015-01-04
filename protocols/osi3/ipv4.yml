@@ -1,7 +1,7 @@
 ---
 protocol:
-  name: internet protocol version 4
-  shortname: ipv4
+  name: ipv4
+  longname: internet protocol version 4
   osilayer: 3
   fields:
     - field: version
@@ -67,8 +67,5 @@ protocol:
       optional: yes
     - field: data
       data: true
-  nextlayer:
-    - { protocol: tcp, identifier: 6 }
-    - { protocol: udp, identifier: 17 }
     
     

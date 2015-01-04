@@ -1,0 +1,9 @@
+---
+layertransition:
+  layers: { from: 2, to: 3 }
+  protocols: 
+    - eth-frame
+  nextlayer:
+    - { idhex: 0x0800, protocol: ipv4 }
+    - { idhex: 0x0806, protocol: arp }
+    

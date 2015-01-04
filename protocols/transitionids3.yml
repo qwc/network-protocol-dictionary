@@ -1,0 +1,12 @@
+---
+layertransition:
+  layers: { from: 3, to: 4 }
+  protocols: 
+    - ipv4
+    - ipv6
+  nextlayer:
+    - { idhex: 0x11, protocol: udp }
+    - { idhex: 0x06, protocol: tcp }
+    - { idhex: 0x32, protocol: ipsec_esp }
+    - { idhex: 0x33, protocol: ipsec_ah }
+    
