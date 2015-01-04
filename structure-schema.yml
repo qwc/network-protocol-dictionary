@@ -61,7 +61,7 @@ mapping:
         sequence: 
           - type: map
             mapping: 
-              "extension": 
+              "extension": &extension
                 type: map
                 mapping: 
                   "name":
@@ -71,7 +71,7 @@ mapping:
                     type: str
                   "referenceid": #reference id used in protocol definition or extension itself
                     type: int
-                    required: yes
+                    required: yes #really? maybe not...
                   "before": # standard is after the normal protocol structure, but could be used for vlan in ethernet for example.
                     type: str
                   "after": 
@@ -95,3 +95,25 @@ mapping:
                   "desc":   # description 
                     type: str
                     required: yes
+# constraints
+
+# even possible?
+# how to implement?
+
+#maybe like this:
+# "constraint":
+#   type: map
+#   mapping:
+#     "name":
+#       type: str
+#     "type": # hmm, maybe better in triggers with "function": ?
+#       enum: [ crc, ...? ]
+#     "triggers":
+#       type: seq
+#       ....
+#     "actions":
+#       type: seq
+#       sequence:
+#         - type: map
+#           mapping:
+#             "extension": *extension
