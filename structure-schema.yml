@@ -78,4 +78,4 @@ mapping:
                   "fields":
                     type: seq
                     sequence: *fieldsseq
-            
+      #"documentation":  #todo!
