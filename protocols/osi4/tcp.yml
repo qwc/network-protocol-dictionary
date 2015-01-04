@@ -2,62 +2,51 @@
 protocol: &tcp
   name: TCP
   fields:
-    - 
-      field: source port
+    - field: srcport
+      desc: source port
       length: 2
-    - 
-      field: destination port
+    - field: dstport
+      desc: destination port
       length: 2
-    - 
-      field: sequence number
+    - field: seqno
+      desc: sequence number
       length: 4
-    - 
-      field: acknowledgment number
+    - field: ackno
+      desc: acknowledgment number
       length: 4
-    - 
-      field: data offset
+    - field: dataoffset
+      desc: data offset
       bitfield: yes
       length: 4
-    - 
-      field: reserved
+    - field: reserved
       bitfield: yes
       length: 6
-    - 
-      field: URG
+    - field: URG
       bitfield: yes
       length: 1
-    - 
-      field: ACK
+    - field: ACK
       bitfield: yes
       length: 1
-    - 
-      field: PSH
+    - field: PSH
       bitfield: yes
       length: 1
-    - 
-      field: RST
+    - field: RST
       bitfield: yes
       length: 1
-    - 
-      field: SYN
+    - field: SYN
       bitfield: yes
       length: 1
-    - 
-      field: FIN
+    - field: FIN
       bitfield: yes
       length: 1
-    -
-      field: window
+    - field: window
       length: 2
-    -
-      field: checksum
+    - field: checksum
       length: 2
-    -
-      field: options
+    - field: options
       length: 4
       optional: true
       repeatable: true
-    -
-      field: data
+    - field: data
       data: true
   osilayer: 4

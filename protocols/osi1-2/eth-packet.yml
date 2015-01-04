@@ -3,11 +3,10 @@ protocol: &ethpacket
   name: eth-packet
   osilayer: 1
   fields:
-    -
-      field: preamble
+    - field: preamble
       length: 7
-    -
-      field: Start of frame delimiter
+    - field: sfd
+      desc: Start of frame delimiter
       length: 1
     - field: eth-frame
       data: true

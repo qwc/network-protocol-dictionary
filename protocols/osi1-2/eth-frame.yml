@@ -4,45 +4,42 @@ protocol: &ethframe
   name: eth-frame
   osilayer: 2
   fields:
-    - 
-      field: destination MAC
+    - field: dstmac
+      desc: destination MAC
       length: 6
-    - 
-      field: source MAC
+    - field: srcmac 
+      desc: source MAC
       length: 6
-    -
-      field: vlan tag
+    - field: vlantag
+      desc: VLAN tag
       length: 4
       subfields: 
-        -
-          field: tag protocol identifier (0x8100)
+        - field: tpid
+          desc: tag protocol identifier (0x8100)
           length: 2
-        -
-          field: tag control information
+        - field: tci
+          desc: tag control information
           length: 2
           subfields:
-            -
-              field: priority code point (PCP)
+            - field: pcp
+              desc: priority code point (PCP)
               bitfield: yes
               length: 3
-            -
-              field: drop eligible indicator (DEI)
+            - field: dei
+              desc: drop eligible indicator (DEI)
               bitfield: yes
               length: 1
-            -
-              field: VLAN identifier (VID)
+            - field: vid
+              desc: VLAN identifier (VID)
               bitfield: yes
               length: 12
-    -
-      field: protocolid
+    - field: protocolid
       desc: Ethertype (Eth II) or length (IEEE 802.3)
       length: 2
       nextlayer: yes
-    -
-      field: data
+    - field: data
       data: true
-    -
-      field: CRC
+    - field: CRC
       desc: FCS (32-bit CRC)
       length: 4
       optional: yes #most network stacks compute that automatically
