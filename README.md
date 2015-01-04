@@ -10,8 +10,7 @@ This is a YAML network protocol dictionary for all (binary based) OSI-Layer 1-4 
 
 - What it is clearly **NOT**:
   - Currently: complete.
-  - A replacement for reading RFCs
-    - Dependencies and constraints are **NOT** defined in this dictionary
+  - A replacement for reading RFCs: Dependencies and constraints are **NOT** defined in this dictionary
   - A source for implementing network stacks
 
 
