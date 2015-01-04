@@ -79,4 +79,19 @@ mapping:
                   "fields":
                     type: seq
                     sequence: *fieldsseq
-      #"documentation":  #todo!
+      "documentation": 
+        type: map
+        mapping:
+          "summary": # a summary about this protocol (optional)
+            type: str
+          "descriptions": # descriptions of the fields
+            type: seq
+            sequence:
+              - type: map
+                mapping:
+                  "field":  # field name as defined in the protocol structure
+                    type: str
+                    required: yes
+                  "desc":   # description 
+                    type: str
+                    required: yes
