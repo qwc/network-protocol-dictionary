@@ -22,6 +22,7 @@ How to add a new protocol
 - Check structure-schema.yml.  
 - Write protocol file in ./protocols/osi[layer]/[protocolname].yml. 
 - Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml' or validate all at once with 'kwalify -lf structure-schema.yml ./protocols/osi*/*.yml'. 
+- Set up a merge request.
 - Be happy.
 
 How to use this dictionary
