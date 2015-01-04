@@ -28,6 +28,8 @@ mapping:
                 type: bool
               "repeatable":
                 type: bool
+              "nextlayer": #identifies this field as nextlayer field (see nextlayer definition below)
+                type: bool
               "data": #data placeholder for next layer
                 type: bool
               "reference": #reference another protocol directly (e.g. ethpacket->ethframe) 
@@ -39,7 +41,7 @@ mapping:
         type: int 
         range: { max: 7, min: 1 }
         required: yes
-      "nextlayer":
+      "nextlayer": #identifier list for next layer protocols
         type: seq
         sequence:
           - type: map
@@ -50,6 +52,8 @@ mapping:
               "identifier":
                 type: int
                 required: yes
+              "extension": 
+                type: bool
       "extensions": 
         type: seq
         sequence: 
@@ -64,6 +68,13 @@ mapping:
                   "referencedfrom": #referencing field of protocol definition
                     type: str
                     required: yes
+                  "referenceid": #reference id used in protocol definition or extension itself
+                    type: int
+                    required: yes
+                  "before": # standard is after the normal protocol structure, but could be used for vlan in ethernet for example.
+                    type: str
+                  "after": 
+                    type: str
                   "fields":
                     type: seq
                     sequence: *fieldsseq

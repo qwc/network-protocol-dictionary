@@ -34,11 +34,15 @@ protocol: &ethframe
               bitfield: yes
               length: 12
     -
-      field: Ethertype (Eth II) or length (IEEE 802.3)
+      field: protocolid
+      desc: Ethertype (Eth II) or length (IEEE 802.3)
       length: 2
+      nextlayer: yes
     -
       field: data
       data: true
     -
-      field: FCS (32-bit CRC)
+      field: CRC
+      desc: FCS (32-bit CRC)
       length: 4
+      optional: yes #most network stacks compute that automatically
