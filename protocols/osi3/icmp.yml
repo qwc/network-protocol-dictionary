@@ -1,0 +1,18 @@
+# ICMP protocol
+---
+protocol: &icmp
+  name: icmp
+  longname: Internet Control Message Protocol
+  osilayer: 3
+  fields:
+    - field: type
+      length: 1
+    - field: code
+      length: 1
+    - field: checksum
+      length: 2
+    - field: roh
+      desc: rest of header
+      length: 4
+    - field: data
+      optional: true
