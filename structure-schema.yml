@@ -34,6 +34,8 @@ mapping:
                 type: bool
               "reference": #reference another protocol directly (e.g. ethpacket->ethframe) 
                 type: str
+              "reflength": #reference another field for length of this field
+                type: str
               "subfields": 
                 type: seq
                 sequence: *fieldsseq
