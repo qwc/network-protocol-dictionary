@@ -1,0 +1,35 @@
+# arp
+---
+protocol: &arp
+  name: arp
+  osilayer: 2
+  fields:
+    - field: htype
+      desc: Hardware type
+      length: 2
+    - field: ptype
+      desc: Protocol type
+      length: 2
+    - field: hlen
+      desc: Hardware address length
+      length: 1
+    - field: plen
+      desc: Protocol address length
+      length: 1
+    - field: oper
+      desc: Operation
+      length: 2
+    - field: sha
+      desc: sender hardware address
+      reflength: hlen
+    - field: spa
+      desc: sender protocol address
+      reflength: plen
+    - field: tha
+      desc: target hardware address
+      reflength: hlen
+    - field: tpa
+      desc: target protocol address
+      reflength: plen
+      
+
