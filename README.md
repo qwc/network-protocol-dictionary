@@ -18,7 +18,7 @@ How to add a new protocol
 ----
 
 - Clone. 
-- Install ruby+[kwalify](http://www.kuwata-lab.com/kwalify/).
+- Install ruby+[kwalify](http://www.kuwata-lab.com/kwalify/) (gem install kwalify).
 - Check structure-schema.yml.  
 - Write protocol file in ./protocols/osi[layer]/[protocolname].yml. 
 - Validate structure with 'kwalify -lf structure-schema.yml [path/to/protocolname].yml' or validate all at once with 'kwalify -lf structure-schema.yml ./protocols/osi*/*.yml'. 
@@ -31,7 +31,7 @@ How to use this dictionary
 Currently not recommended, because the project lacks deeper tests than just schema validation. ;)
 
 - Clone. 
-- Get a YAML library for your program language. 
+- Get a YAML library for your program language. Or get a converter for JSON or XML, to use these markup languages.
 - Load desired protocol files, or all of them. 
 - Use resulting data structures to build protocol packet structures.
 
