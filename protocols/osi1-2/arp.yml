@@ -2,6 +2,7 @@
 ---
 protocol: &arp
   name: arp
+  longname: Address Resolution Protocol
   osilayer: 2
   fields:
     - field: htype
