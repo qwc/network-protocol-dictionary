@@ -1,7 +1,7 @@
-# ICMP protocol
+# ICMPv4 protocol
 ---
-protocol: &icmp
-  name: icmp
+protocol: &icmpv4
+  name: icmpv4
   longname: Internet Control Message Protocol
   osilayer: 3
   fields:
