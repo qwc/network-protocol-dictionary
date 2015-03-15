@@ -14,6 +14,12 @@ This is a YAML network protocol dictionary for all (binary based) OSI-Layer 1-4 
   - A source for implementing network stacks
 
 
+Why?
+----
+I have a project where I want to use a non platform dependent source for network protocol structures so I want to avoid using the defined structures in the OS includes which depend on the operating system used at program execution.
+Simple, isn't it?
+
+
 How to add a new protocol
 ----
 
