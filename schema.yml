@@ -1,0 +1,25 @@
+type: //rec
+required:
+  protocol:
+    type: //rec
+    required:
+      name: //str
+      longname: //str
+      osilayer: //int
+      fields: &fields
+        type: //arr
+        contents: {
+          type: //rec
+          required:
+            field: //str
+            desc: //str
+            length: //int
+          optional:
+            bitfield: //bool
+            optional: //bool
+            nextlayer: //bool
+            data: //bool
+            reference: //str
+            reflenght: //str
+            subfields: *fields
+        }
