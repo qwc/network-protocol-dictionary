@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="208c8f22-eeea-487d-8a23-c2fce1eb1434" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/osi1-2/arp.yml" afterPath="$PROJECT_DIR$/protocols/osi1-2/arp.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/osi1-2/eth-frame.yml" afterPath="$PROJECT_DIR$/protocols/osi1-2/eth-frame.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/osi1-2/eth-packet.yml" afterPath="$PROJECT_DIR$/protocols/osi1-2/eth-packet.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/osi3/icmpv4.yml" afterPath="$PROJECT_DIR$/protocols/osi3/icmpv4.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/osi3/ipv4.yml" afterPath="$PROJECT_DIR$/protocols/osi3/ipv4.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.yml" afterPath="$PROJECT_DIR$/schema.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validate.py" afterPath="$PROJECT_DIR$/validate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="npd.iws" />
     <ignored path=".idea/workspace.xml" />
