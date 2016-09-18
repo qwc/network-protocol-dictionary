@@ -15,4 +15,5 @@ protocol: &icmpv4
       desc: rest of header
       length: 4
     - field: data
+      data: true
       optional: true

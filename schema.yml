@@ -26,12 +26,16 @@ definitions:
   field:
     type: object
     properties:
+      length:
+        type: integer
+      reflength:
+        type: string
+      data:
+        type: boolean
       field:
         type: string
       desc:
         type: string
-      length:
-        type: integer
       bitfield:
         type: boolean
       optional:
@@ -40,16 +44,18 @@ definitions:
         type: boolean
       nextlayer:
         type: boolean
-      data:
-        type: boolean
       reference:
-        type: string
-      reflength:
         type: string
       subfields:
         type: array
         items:
           $ref: "#/definitions/field"
+    oneOf:
+      - required:
+        - length
+      - required:
+        - reflength
+      - required:
+        - data
     required:
       - field
-      - length
