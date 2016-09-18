@@ -1,19 +1,24 @@
-import Rx
+
 import sys
+from jsonschema import validate
+import yaml
 
 
-def validate(argv):
-    rx = Rx.Factory(register_core_types=True)
-    schemafile = "schema.yaml"
+
+def main(argv):
+    schemafile = "schema.yml"
     schema = None
-    data = None
+    schemadata = None
     with open(schemafile, "r") as f:
-        data = f.read()
-    schema = rx.make_schema(data)
+        schemadata = yaml.load(f)
+    data = None
+    with open(argv[1], "r") as f:
+        data = yaml.load(f)
     # get all yml files from protocols
     # validate with
-    schema.validate(data)
+    validate(data, schemadata)
+
 
 
 if __name__ == '__main__':
-    validate(sys.argv)
+    main(sys.argv)

@@ -1,25 +1,55 @@
-type: //rec
-required:
+---
+#title: protocol-schema
+type: object
+properties:
   protocol:
-    type: //rec
+    type: object
+    properties:
+      name:
+        type: string
+      longname:
+        type: string
+      fields:
+        type: array
+        items:
+          $ref: "#/definitions/field"
+      osilayer:
+        type: integer
+        minimum: 1
+        maximum: 7
     required:
-      name: //str
-      longname: //str
-      osilayer: //int
-      fields: &fields
-        type: //arr
-        contents: {
-          type: //rec
-          required:
-            field: //str
-            desc: //str
-            length: //int
-          optional:
-            bitfield: //bool
-            optional: //bool
-            nextlayer: //bool
-            data: //bool
-            reference: //str
-            reflenght: //str
-            subfields: *fields
-        }
+      - name
+      - fields
+      - osilayer
+
+definitions:
+  field:
+    type: object
+    properties:
+      field:
+        type: string
+      desc:
+        type: string
+      length:
+        type: integer
+      bitfield:
+        type: boolean
+      optional:
+        type: boolean
+      repeatable:
+        type: boolean
+      nextlayer:
+        type: boolean
+      data:
+        type: boolean
+      reference:
+        type: string
+      reflength:
+        type: string
+      subfields:
+        type: array
+        items:
+          $ref: "#/definitions/field"
+    required:
+      - field
+      - length

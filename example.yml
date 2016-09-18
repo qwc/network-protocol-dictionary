@@ -1,49 +1,49 @@
 # Example YAML protocol structure
-
+---
 protocol: &tcp
   name: TCP
   fields:
-    - 
+    -
       field: source port
       length: 2
-    - 
+    -
       field: destination port
       length: 2
-    - 
+    -
       field: sequence number
       length: 4
-    - 
+    -
       field: acknowledgment number
       length: 4
-    - 
+    -
       field: data offset
       bitfield: yes
       length: 4
-    - 
+    -
       field: reserved
       bitfield: yes
       length: 6
-    - 
+    -
       field: URG
       bitfield: yes
       length: 1
-    - 
+    -
       field: ACK
       bitfield: yes
       length: 1
-    - 
+    -
       field: PSH
       bitfield: yes
       length: 1
-    - 
+    -
       field: RST
       bitfield: yes
       length: 1
-    - 
+    -
       field: SYN
       bitfield: yes
       length: 1
-    - 
+    -
       field: FIN
       bitfield: yes
       length: 1
@@ -63,8 +63,3 @@ protocol: &tcp
       length: 0
       data: true
   osilayer: 4
-
-   
-
-
-
