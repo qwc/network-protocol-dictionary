@@ -17,6 +17,55 @@ properties:
         type: integer
         minimum: 1
         maximum: 7
+      extensionreferencefield:
+        type: string
+      extensions:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            referencedfrom:
+              type: string
+            referenceid:
+              type: integer
+            before:
+              type: string
+            after:
+              type: string
+            fields:
+              type: array
+              items:
+                $ref: "#/definitions/field"
+          oneOf:
+            required:
+              - before
+            required:
+              - after
+          required:
+            - name
+            - referenceid
+      documentation:
+        type: object
+        properties:
+          summary:
+            type: string
+          descriptions:
+            type: array
+            items:
+              type: object
+              properties:
+                field:
+                  type: string
+                desc:
+                  type: string
+              required:
+                - field
+                - desc
+        required:
+          - summary
+          - descriptions
     required:
       - name
       - fields
