@@ -22,30 +22,7 @@ properties:
       extensions:
         type: array
         items:
-          type: object
-          properties:
-            name:
-              type: string
-            referencedfrom:
-              type: string
-            referenceid:
-              type: integer
-            before:
-              type: string
-            after:
-              type: string
-            fields:
-              type: array
-              items:
-                $ref: "#/definitions/field"
-          oneOf:
-            required:
-              - before
-            required:
-              - after
-          required:
-            - name
-            - referenceid
+          $ref: "#/definitions/extension"
       documentation:
         type: object
         properties:
@@ -108,3 +85,31 @@ definitions:
         - data
     required:
       - field
+  extension:
+    type: object
+    properties:
+      extension:
+        type: object
+        properties:
+          name:
+            type: string
+          referencedfrom:
+            type: string
+          referenceid:
+            type: integer
+          before:
+            type: string
+          after:
+            type: string
+          fields:
+            type: array
+            items:
+              $ref: "#/definitions/field"
+        oneOf:
+          - required:
+            - before
+          - required:
+            - after
+        required:
+          - name
+          - referenceid
