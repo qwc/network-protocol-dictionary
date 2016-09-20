@@ -33,8 +33,9 @@ protocol:
   extensionreferencefield: nextheader
   extensions:
     - extension:
-        name: hopbyhop 
+        name: hopbyhop
         referenceid: 0
+        after: dstaddress
         fields: &hopbyhop
           - field: nextheader
             length: 1
@@ -48,13 +49,15 @@ protocol:
             length: 8
             optional: yes
             repeatable: yes
-    - extension: 
+    - extension:
         name: destoptions
         referenceid: 60
+        after: dstaddress
         fields: *hopbyhop
     - extension:
         name: routing #is deprecated (see http://en.wikipedia.org/wiki/IPv6_packet)
         referenceid: 43
+        after: dstaddress
         fields:
           - field: nextheader
             length: 1
@@ -73,6 +76,7 @@ protocol:
     - extension:
         name: fragment
         referenceid: 44
+        after: dstaddress
         fields:
           - field: nextheader
             length: 1
