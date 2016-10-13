@@ -4,10 +4,10 @@ protocol: &ethpacket
   osilayer: 1
   fields:
     - field: preamble
-      length: 7
+      bytes: 7
     - field: sfd
       desc: Start of frame delimiter
-      length: 1
+      bytes: 1
     - field: eth-frame
       data: true
       reference: eth-frame

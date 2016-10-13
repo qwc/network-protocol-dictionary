@@ -7,19 +7,19 @@ protocol: &arp
   fields:
     - field: htype
       desc: Hardware type
-      length: 2
+      bytes: 2
     - field: ptype
       desc: Protocol type
-      length: 2
+      bytes: 2
     - field: hlen
       desc: Hardware address length
-      length: 1
+      bytes: 1
     - field: plen
       desc: Protocol address length
-      length: 1
+      bytes: 1
     - field: oper
       desc: Operation
-      length: 2
+      bytes: 2
     - field: sha
       desc: sender hardware address
       reflength: hlen
@@ -32,5 +32,3 @@ protocol: &arp
     - field: tpa
       desc: target protocol address
       reflength: plen
-      
-

@@ -6,12 +6,12 @@ protocol:
   fields:
     - field: srcport
       desc: source port
-      length: 2
+      bytes: 2
     - field: dstport
       desc: destination port
-      length: 2
+      bytes: 2
     - field: length
       desc: length of header and data
-      length: 2
+      bytes: 2
     - field: checksum
-      length: 2
+      bytes: 2

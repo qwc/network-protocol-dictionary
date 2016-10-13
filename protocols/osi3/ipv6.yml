@@ -4,32 +4,29 @@ protocol:
   osilayer: 3
   fields:
     - field: version
-      bitfield: yes
-      length: 4
+      bits: 4
     - field: trafficclass
       desc: traffic class
-      bitfield: yes
-      length: 8
+      bits: 8
     - field: flowlabel
       desc: flow label
-      bitfield: yes
-      length: 20
+      bits: 20
     - field: length
       desc: payload length
-      length: 2
+      bytes: 2
     - field: nextheader
       desc: next header identifier (see ipv4 protocol id)
-      length: 1
-      nextlayer: yes
+      bytes: 1
+      nextlayer: true
     - field: hoplimit
       desc: hop limit
-      length: 1
+      bytes: 1
     - field: srcaddress
       desc: source address
-      length: 16
+      bytes: 16
     - field: dstaddress
       desc: destination address
-      length: 16
+      bytes: 16
   extensionreferencefield: nextheader
   extensions:
     - extension:
@@ -38,17 +35,17 @@ protocol:
         after: dstaddress
         fields: &hopbyhop
           - field: nextheader
-            length: 1
-            nextlayer: yes
+            bytes: 1
+            nextlayer: true
           - field: extlength
             desc: Header extension lengthin octets
-            length: 1
+            bytes: 1
           - field: options
-            length: 6
+            bytes: 6
           - field: options
-            length: 8
-            optional: yes
-            repeatable: yes
+            bytes: 8
+            optional: true
+            repeatable: true
     - extension:
         name: destoptions
         referenceid: 60
@@ -60,18 +57,18 @@ protocol:
         after: dstaddress
         fields:
           - field: nextheader
-            length: 1
-            nextlayer: yes
+            bytes: 1
+            nextlayer: true
           - field: extlength
-            length: 1
+            bytes: 1
           - field: routingtype
-            length: 1
+            bytes: 1
           - field: segmentsleft
-            length: 1
+            bytes: 1
           - field: typedata
-            length: 4
+            bytes: 4
           - field: typedata
-            length: 8
+            bytes: 8
             optional: yes
     - extension:
         name: fragment
@@ -79,18 +76,15 @@ protocol:
         after: dstaddress
         fields:
           - field: nextheader
-            length: 1
-            nextlayer: yes
+            bytes: 1
+            nextlayer: true
           - field: reserved
-            length: 1
+            bytes: 1
           - field: fragmentoffset
-            bitfield: yes
-            length: 13
+            bits: 13
           - field: reserved
-            bitfield: yes
-            length: 2
+            bits: 2
           - field: mflag
-            bitfield: yes
-            length: 1
+            bits: 1
           - field: identification
-            length: 4
+            bytes: 4

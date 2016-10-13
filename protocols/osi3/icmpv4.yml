@@ -6,14 +6,14 @@ protocol: &icmpv4
   osilayer: 3
   fields:
     - field: type
-      length: 1
+      bytes: 1
     - field: code
-      length: 1
+      bytes: 1
     - field: checksum
-      length: 2
+      bytes: 2
     - field: roh
       desc: rest of header
-      length: 4
+      bytes: 4
     - field: data
       data: true
       optional: true

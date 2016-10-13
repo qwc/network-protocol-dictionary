@@ -6,40 +6,37 @@ protocol: &ethframe
   fields:
     - field: dstmac
       desc: destination MAC
-      length: 6
-    - field: srcmac 
+      bytes: 6
+    - field: srcmac
       desc: source MAC
-      length: 6
+      bytes: 6
     - field: vlantag
       desc: VLAN tag
-      length: 4
-      subfields: 
+      bytes: 4
+      subfields:
         - field: tpid
           desc: tag protocol identifier (0x8100)
-          length: 2
+          bytes: 2
         - field: tci
           desc: tag control information
-          length: 2
+          bytes: 2
           subfields:
             - field: pcp
               desc: priority code point (PCP)
-              bitfield: yes
-              length: 3
+              bits: 3
             - field: dei
               desc: drop eligible indicator (DEI)
-              bitfield: yes
-              length: 1
+              bits: 1
             - field: vid
               desc: VLAN identifier (VID)
-              bitfield: yes
-              length: 12
+              bits: 12
     - field: protocolid
       desc: Ethertype (Eth II) or length (IEEE 802.3)
-      length: 2
-      nextlayer: yes
+      bytes: 2
+      nextlayer: true
     - field: data
       data: true
     - field: CRC
       desc: FCS (32-bit CRC)
-      length: 4
-      optional: yes #most network stacks compute that automatically
+      bytes: 4
+      optional: true #most network stacks compute that automatically
